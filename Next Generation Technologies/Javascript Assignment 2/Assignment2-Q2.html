@@ -1,0 +1,60 @@
+<html>
+
+	<head>
+		<script type="text/javascript">
+		
+			function Book (title,author,publisher,price) //constructor book
+			{
+			
+			this.t = title;
+			this.a = author;
+			this.p = publisher;
+			this.pr = price;
+			
+			
+				this.printBook = function printBook() 
+				{//function to print out book information
+					document.write("Book title: " + this.t + "<br>");
+					document.write("Book author: " + this.a + "<br>");
+					document.write("Book publisher: " + this.p + "<br>");
+					document.write("Book price: " + this.pr + "<br>");
+				};
+			
+		}
+		
+				var i = 0;
+				var n = 0;
+		
+			
+			function loop() // this function allows to run the program many times as requested by the client 
+			{ 
+
+				
+				
+				n = window.prompt("How many times do you want to run this?");
+				var books = new Array(n);
+
+				
+				if (isNaN(n) == true || n<=0 || Math.floor(n) != Math.ceil(n)) // if the user doesn't a positive integer, it re asks the user to input an integer 
+					{
+						window.alert("In order to run this program you must input a positive integer");
+					}	
+					
+					for (i=0;i<n; i=i+1)// loops n times requested by the user
+				{//this allows the user to input the information inside the array
+					books[i] = new Book("","","",'');
+					books[i].t = window.prompt("Enter the book title");
+					books[i].a = window.prompt("Enter the book author");
+					books[i].p = window.prompt("Enter the book publisher");
+					books[i].pr = window.prompt("Enter the book price");
+
+					books[i].printBook();
+				
+				}
+			}
+			
+		</script>
+	</head>
+	<body onload="loop()">
+	</body>
+</html>

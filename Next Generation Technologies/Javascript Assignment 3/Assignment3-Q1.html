@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Assignment 3</title>
+<script type="text/javascript"> 
+	function RandomPos()//function that assigns a random position of the picture when the mouse is over it (onmouseover)
+	{
+	
+		var top=Math.random()* (screen.availHeight-385);//Math.random allows to move a picture a random number of pixels
+		var left=Math.random()* (screen.availWidth-385);//screen.availHeight(Width) adapts to each individual user and the number (in this case 385) acts as a minimumso that picture can't go a certain point 
+
+		document.getElementById("ape").style.top=top+"px";//calling the picture and allows the change to happen (in the top coordinates)
+		document.getElementById("ape").style.left=left+"px";//same thing in the left coordinates 
+
+	} 
+	
+	function OnClick()//when the mouse click on the picture (onclick) a warning is shown
+	{
+		window.alert("Caught!");
+	}
+</script>
+</head><body onload="RandomPos()">
+<h1>Yet another ape</h1>
+<img id="ape" style="position:absolute" src="http://graemehobbs93.files.wordpress.com/2012/01/ape-1.jpg" onclick="OnClick();" onmouseover="RandomPos();" />
+</body> </html>

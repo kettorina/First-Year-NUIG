@@ -1,0 +1,77 @@
+<html> 
+	<body onload="main();">
+		<table id="table1">
+		<tr><th>First Name</th><th>Second Name</th></tr>
+		<tr><td>Fred</td><td>Morrison</td></tr>
+		<tr><td>Sarah</td><td>O'Connor</td></tr>
+		<tr><td>Sam</td><td>Spoon</td></tr>
+		</table>
+		<script type="text/javascript">
+			function main()
+			{
+				var table = document.getElementById("table1");
+				var i = 0;
+				var body = table.childNodes[1];//creates a parent node for table
+				var numberofchildren = body.children.length;//calculates the child nodes in the table 
+				var numberofrows = (Math.floor((Math.random())*100))%(numberofchildren-1)+1;//calculates the number of rows
+				
+				for (i = 0; i < numberofrows; i++)
+				{
+					numberofchildren = body.children.length;//to ensure that the number of rows is correct every time it increments
+					var newrows = ((Math.floor(Math.random()*100))%(numberofchildren-1)+1);//calculates the number of rows to be deleed
+					body.removeChild(body.children[newrows]);//remove the rows
+				}
+				
+				i = 0;//reinitialise to 0
+				
+				for (i = 0; i<numberofrows; i++)
+				{
+					var addnewrow = document.createElement("TR");//add a new row
+					var addnewcell0 = document.createElement("TD");//adds one of the cells
+					var addnewcell1 = document.createElement("TD");//adds the second cell 
+					var firstname = randomname();//the first name is taken from the randomname()
+					var lastname = randomname();//similar to above
+					var text0 = document.createTextNode(firstname);//creates to write text
+					var text1 = document.createTextNode(lastname);//similar to above
+					addnewcell0.appendChild(text0);//the function mentioned above is added to the cell
+					addnewcell1.appendChild(text1);//similar to above
+					addnewrow.appendChild(addnewcell0);//the function mentioned above is added to the row
+					addnewrow.appendChild(addnewcell1);//similar to above
+					body.appendChild(addnewrow);//function is added to the body
+				}
+				
+			}
+
+			function randomname()
+			{
+				var j = 0;
+				var lengthofname = ((Math.floor(Math.random()*100))%8) + 4;//calculates a random number for length of a name
+				var name="";
+				
+				for(j=0; j < lengthofname; j++)
+				{
+					var character = (Math.floor(Math.random()*100));//calculates a random number for a character
+					if (j == 0)
+					{
+						character = ((Math.floor(Math.random()*100))%26) + 65;//if the first character of the lengthofname the mods the number to mod 26 and 65 is added (ascii tables for capital letters)
+					}
+					else
+					{
+						character = ((Math.floor(Math.random()*100))%26) + 97;//if isn't the first character of the lengthofname the mods the number to mod 26 and 97 is added (ascii tables for lowercase letters)
+					}
+					
+					var tocharacter = String.fromCharCode(character);//converts a number into a character
+					name = name + tocharacter;//each characters to the name one at the time
+				}
+				return name; //returns a name 
+			}
+	</script>
+	</body> 
+ </html>
+
+
+
+
+
+
+ 

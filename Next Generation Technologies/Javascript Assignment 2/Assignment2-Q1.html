@@ -1,0 +1,32 @@
+<html>
+
+	<head>
+		<script type="text/javascript">
+			var i = 0;
+			var n = 0;
+			
+			function loop() // this function allows to run the program many times as requested by the client 
+			{ 
+			
+				var i=0;
+				var n = window.prompt("How many times do you want to run this?");
+				
+				if (isNaN(n) == true || n<=0 || Math.floor(n) != Math.ceil(n)) // if the user doesn't a positive integer, it re asks the user to input an integer 
+					{
+						window.alert("In order to run this program you must input a positive integer");
+					}	
+					
+				var strings = new Array(n);
+				
+				for (i=0;i<n; i=i+1)// loops n times requested by the user
+				{ 
+					string = window.prompt("Enter your string");
+					document.write(string + " ");
+				
+				}
+			}
+		</script>
+	</head>
+	<body onload="loop()">
+	</body>
+</html>

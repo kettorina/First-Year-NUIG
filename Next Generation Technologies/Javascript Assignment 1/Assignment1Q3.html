@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		
+		
+		
+			function loop() { // this function allows to run the program many times as requested by the client 
+			
+				var i;
+				var n = window.prompt("How many times do you want to run this?");
+				
+				for (i=0;i<n; i=i+1){ // loops n times requested by the user
+				
+				assign3();
+				
+				}
+			}
+		
+			function assign3()
+			{ 
+				var age = window.prompt("Please enter your age");// similar to q1
+		
+				if (age == 0){
+					document.write("Error");// similar to q1 but the result is shown in html format
+				} 
+		
+				else {
+					var year = 2014 - age;// similar to q1, but as said before the result is shown in html format
+					document.write("You were born in " + year+ "<br>" );
+					}
+			}
+			
+		
+		
+		
+			
+		</script>
+	</head>
+	<body onload="loop()">
+	</body>
+</html>

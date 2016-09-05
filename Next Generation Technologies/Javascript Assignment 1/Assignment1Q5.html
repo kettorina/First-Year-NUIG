@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		
+			function Book (title, author,publisher,price) {//similar to q4
+			
+			this.t = title;
+			this.a = author;
+			this.p = publisher;
+			this.pr = price;
+			
+				this.printBook = function printBook() {//function to print out book information
+				document.write("Book title: " + this.t + "<br>");
+				document.write("Book author: " + this.a + "<br>");
+				document.write("Book publisher: " + this.p + "<br>");
+				document.write("Book price: " + this.pr + "<br>");
+			};
+			
+			}
+			
+			var aBook = new Book ("Game of Thrones", "George R.R. Martin"," Voyager Books",10.95);//similar to q4
+			var bBook = new Book ("Harry Potter and the Deadly Hallows", "J.K Rowling","Bloomsbury",9.95);//similar to q4
+			var cBook = new Book ("Elantris", "Brandon Sanderson","Tor Books",12.95);//similar to q4
+			var dBook = new Book ("The Perks of being a Wallflower","Stephen Chbosky","Pocket Books",7.95);//similar to q4
+			
+			aBook.printBook();//these steps allow to print out four books
+			bBook.printBook();
+			cBook.printBook();
+			dBook.printBook();
+			
+			
+		</script>
+	</head>
+	<body onload="printBook()">
+	</body>
+</html>

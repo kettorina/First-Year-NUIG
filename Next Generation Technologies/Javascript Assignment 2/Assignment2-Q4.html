@@ -1,0 +1,253 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		function main()
+		{
+			var i = 0;
+			var j = 0;
+			var total = 0;
+			var total2 = 0;
+			var question;
+			while(question != 0)
+			{
+				question = window.prompt("Enter the function you want to do (+,-,*,/,sqrt,sin,cos,tan,0 to quit or answer to use previous answer):");//users chooses of the provided functions
+			
+					if (question=="+")//if user chooses addition
+					{
+						i=prompt("Enter the first number:");
+						j=prompt("Enter the second number:");
+						while(isNaN(i)!=0)// checks errors
+							{
+							alert("Must enter a number");
+							i=prompt("Enter the first number:");
+							}
+						while(isNaN(j)!=0)
+							{
+								alert("Must enter a number");
+								j=prompt("Enter the second number:");
+							}
+						total=+i + +j;
+						total2=+total + +total2;//necessary to carry on the total
+						alert("Total: " + total2);
+						continue;
+					}
+				
+					if (question=="-")//if user chooses subtraction
+					{
+						i=prompt("Enter the first number:");
+						j=prompt("Enter the second number:");
+						while(isNaN(i)!=0)
+							{
+								alert("Must enter a number");
+								i=prompt("Enter the first number:");
+							}
+						while(isNaN(j)!=0)
+							{
+								alert("Must enter a number");
+								j=prompt("Enter the second number:");
+							}
+						total=+i - +j;
+						total2=+total + +total2;
+						alert("Total: " + total2);
+						continue;
+					}
+					
+					if (question=="*")//if user chooses multiplication
+					{
+						i=prompt("Enter the first number:");
+						j=prompt("Enter the second number:");
+						while(isNaN(i)!=0)
+							{
+								alert("Must enter a number");
+								i=prompt("Enter the first number:");
+							}
+						while(isNaN(j)!=0)
+							{
+								alert("Must enter a number");
+								j=prompt("Enter the second number:");
+							}
+						total=+i * +j;
+						total2=+total + +total2;
+						alert("Total: " + total2);
+						continue;
+					}
+					
+					if (question=="/")//if user chooses division
+					{
+						i=prompt("Enter the first number:");
+						j=prompt("Enter the second number:");
+						while(isNaN(i)!=0)
+							{
+								alert("Must enter a number");
+								i=prompt("Enter the first number:");
+							}
+						while(isNaN(j)!=0)
+							{
+								alert("Must enter a number");
+								j=prompt("Enter the second number:");
+							}
+						total=+i / +j;
+						total2=+total + +total2;
+						alert("Total: " + total2);
+						continue;
+					}
+					
+					if (question=="sqrt" || question=="Sqrt")//if user chooses square root
+					{
+						i=prompt("Enter the number:");
+						while(isNaN(i)!=0)
+							{
+								alert("Must enter a number");
+								i=prompt("Enter the number:");
+							}
+						total=Math.sqrt(i);
+						total2=+total + +total2;
+						alert("Total: " + total2);
+						continue;
+					}
+					
+					if (question=="sin" || question=="Sin")//if user chooses sin
+					{
+						i=prompt("Enter the number:");
+						while(isNaN(i)!=0)
+							{
+								alert("Must enter a number");
+								i=prompt("Enter the number:");
+							}
+						total=Math.sin(i);
+						total2=+total + +total2;
+						alert("Total: " + total2);
+						continue;
+					}
+					
+					if (question=="cos" || question=="Cos")//if user chooses cos
+					{
+						i=prompt("Enter the number:");
+						while(isNaN(i)!=0)
+							{
+								alert("Must enter a number");
+								i=prompt("Enter the number:");
+							}
+						total=Math.cos(i);
+						total2=+total + +total2;
+						alert("Total: " + total2);
+						continue;
+					}
+					
+					if (question=="tan" || question=="Tan")//if user chooses tan
+					{
+						i=prompt("Enter the number:");
+						while(isNaN(i)!=0)
+							{
+								alert("Must enter a number");
+								i=prompt("Enter the number:");
+							}
+						total=Math.tan(i);
+						total2=+total + +total2;
+						alert("Total: " + total2);
+						continue;
+					}
+					
+					if (question=="answer" || question=="Answer")//if user chooses answer
+					{
+						var question=prompt("Enter the function you want to do (+,-,*,/,sqrt,sin,cos,tan or 0 to quit)");
+						// very similar to other functions but the total from previous functions is saved and used as one of the numbers
+						if (question=="+")
+						{
+							j=prompt("Enter the second number:");
+							while(isNaN(j)!=0)
+								{
+									alert("Must enter a number");
+									j=prompt("Enter the second number:");
+								}
+							total2=+total2 + +j;
+							alert("Total: " + total2);
+							continue;
+						}
+						
+						if (question=="-")
+						{
+							j=prompt("Enter the second number:");
+							while(isNaN(j)!=0)
+								{
+									alert("Must enter a number");
+									j=prompt("Enter the second number:");
+								}
+							total2=+total2 - +j;
+							alert("Total: " + total2);
+							continue;
+						}
+						
+						if (question=="*")
+						{
+							j=prompt("Enter the second number:");
+							while(isNaN(j)!=0)
+								{
+									alert("Must enter a number");
+									j=prompt("Enter the second number:");
+								}
+							total2=+total2 * +j;
+							alert("Total: " + total2);
+							continue;
+						}
+						
+						if (question=="/")
+						{
+							j=prompt("Enter the second number:");
+							while(isNaN(j)!=0)
+								{
+									alert("Must enter a number");
+									j=prompt("Enter the second number:");
+								}
+							total2=+total2 / +j;
+							alert("Total: " + total2);
+							continue;
+						}
+						
+						if (question=="sqrt")
+						{
+							total2=Math.sqrt(total2);
+							alert("Total: " + total2);
+							continue;
+						}
+						
+						if (question=="sin" || question=="Sin")
+						{
+							total2=Math.sin(total2);
+							alert("Total: " + total2);
+							continue;
+						}
+						
+						if (question=="cos" || question=="Cos")
+						{
+							total2=Math.cos(total2);
+							alert("Total: " + total2);
+							continue;
+						}
+						
+						if (question=="tan" || question=="Tan")
+						{
+							total2=Math.tan(total2);
+							alert("Total: " + total2);
+							continue;
+						}
+						
+						
+					}
+					
+					else if(question !=0)//fail condition
+					{
+						alert("Must enter one of the functions specified");
+						main();
+					}
+				
+				
+			}	
+		}
+		
+		
+		</script>
+	</head>
+	<body onload="main();">
+	</body>
+</html>
