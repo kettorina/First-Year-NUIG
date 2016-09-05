@@ -1,0 +1,127 @@
+<html>
+<head>
+	<script type="text/javascript">
+
+	function createdivs() //function that creates four divs and their style attributes and adds it into html table
+	{
+	
+	var div = document.createElement("div");//creates a div
+	div.id = "div1";//variable name
+	div.style.width = "75px";//width of the div
+	div.style.height = "75px";//height of the div
+	div.style.color = "#271D65";//color of the text in the div
+	div.style.fontFamily = "Goudy Old Style";//font of the text in the div
+	div.style.backgroundColor = "#F4C2C2";// background colour in the div
+	div.style.fontSize = "50px";//font size of the text in the div
+	div.style.textAlign = "left";//left alignment of the text in the div
+	div.style.verticalAlign = "top";// top vertical alignment of the text in the div
+	div.style.border = "1px solid black";//border of the div
+	div.innerHTML = "test";//text in a div
+	document.getElementById("putdiv").appendChild(div);//adds div to an existing variable within a html table
+	div.addEventListener("click", function call()//in order to click a div you have to include this function
+	{ 
+	copyonclick("div1")
+	}, false);
+	
+	var div = document.createElement("div");//same attributes but for a second div
+	div.id = "div2";
+	div.style.width = "75px";
+	div.style.height = "75px";
+	div.style.color = "#FF8247";
+	div.style.fontFamily = "Book Antiqua";
+	div.style.backgroundColor = "#C2F4F4";
+	div.style.fontSize = "25px";
+	div.style.textAlign = "center";
+	div.style.verticalAlign = "middle";
+	div.style.border = "1px solid black";
+	div.innerHTML = "test";
+	document.getElementById("putdiv").appendChild(div);
+	div.addEventListener("click", function call()
+	{ 
+	copyonclick("div2")
+	}, false);
+	
+	var div = document.createElement("div");//third div
+	div.id = "div3";
+	div.style.width = "75px";
+	div.style.height = "75px";
+	div.style.color = "#187846";
+	div.style.fontFamily = "Rockwell";
+	div.style.backgroundColor = "#85CECE";
+	div.style.fontSize = "15px";
+	div.style.textAlign = "right";
+	div.style.verticalAlign = "middle";
+	div.style.border = "1px solid black";
+	div.innerHTML = "test";
+	document.getElementById("putdiv").appendChild(div);
+	div.addEventListener("click", function call()
+	{ 
+	copyonclick("div3")
+	}, false);
+	
+	var div = document.createElement("div");//fourth div
+	div.id = "div4";
+	div.style.width = "75px";
+	div.style.height = "75px";
+	div.style.color = "#D71868";
+	div.style.fontFamily = "Georgia";
+	div.style.backgroundColor = "#53A8A8";
+	div.style.fontSize = "30px";
+	div.style.textAlign = "right";
+	div.style.verticalAlign = "top";
+	div.style.border = "1px solid black";
+	div.innerHTML = "test";
+	document.getElementById("putdiv").appendChild(div);
+	div.addEventListener("click", function call()
+	{ 
+	copyonclick("div4")
+	}, false);
+	
+	};
+	
+	var countclick=1;
+	var original;
+	
+	function copyonclick(id)//allows to copy one style attribute to another variable
+	{	
+		
+		if(countclick==1)//on the first click the style is copied into var original
+		{
+			original = document.getElementById(id).style;
+			countclick=2;//increment the click
+			return;
+		}
+		
+		if(countclick==2 && id!="div1" && id!="div2" && id!="div3" && id!="div4")//this insures that the div tags are not replaced by a copy
+		{
+			document.getElementById(id).style.color = original.color;//copies colour into a new variable 
+			document.getElementById(id).style.fontFamily = original.fontFamily;//copies font family
+			document.getElementById(id).style.backgroundColor = original.backgroundColor;//copies background color
+			document.getElementById(id).style.fontSize = original.fontSize;//copies font size
+			document.getElementById(id).style.textAlign = original.textAlign;//copies text alignment
+			document.getElementById(id).style.verticalAlign = original.verticalAlign;//copies vertical alignment
+			countclick=1;//increment the click
+			return;
+		}
+		
+		
+	};
+	
+	</script>
+</head>
+<body onload="createdivs()"><!-- on load the createdivs() will run -->
+	<table id="table1" border=1><!-- table and for each row the style is specified -->
+	<tr><td  id="cell1" onclick="copyonclick(id)"width=100 height=100 style="text-align:left; vertical-align:top; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td>
+	<td id="cell2" onclick="copyonclick(id)" width=100 height=100 style="text-align:center; vertical-align:top; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td>
+	<td id="cell3" onclick="copyonclick(id)" width=100 height=100 style="text-align:right; vertical-align:top; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td></tr>
+	<tr><td id="cell4" onclick="copyonclick(id)" width=100 height=100 style="text-align:left; vertical-align:middle; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td>
+	<td id="cell5" onclick="copyonclick(id)" width=100 height=100 style="text-align:center; vertical-align:middle; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td>
+	<td id="cell6" onclick="copyonclick(id)" width=100 height=100 style="text-align:right; vertical-align:middle; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td></tr>
+	<tr><td id="cell7" onclick="copyonclick(id)" width=100 height=100 style="text-align:left; vertical-align:bottom; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td>
+	<td id="cell8" onclick="copyonclick(id)" width=100 height=100 style="text-align:center; vertical-align:bottom; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td>
+	<td id="cell9" onclick="copyonclick(id)" width=100 height=100 style="text-align:right; vertical-align:bottom; color:#000000; font-family:Lucida Bright; background-color:#F1FFFF; font-size:35px">test</td>
+	<div id="putdiv" style="position:absolute; top:1.5%; left:30%" ></div></tr> 
+	</table>
+	
+</body>
+</html>

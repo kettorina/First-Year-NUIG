@@ -1,0 +1,87 @@
+<html> 
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+    
+	var i = 0;
+	
+	
+	$(document).ready(function(){ //function only runs when the DOM is ready for JavaScript code to execute
+	$('#button').click(function(){ //function that runs by clicking the variable button
+	
+	var first = $("#firstName").val();//variable name
+	var second = $("#secondName").val();//variable name
+	
+	for (i=0; i < first.length; i++)//this function checks character by character if a string contains a number
+	{
+		if (isNaN(first[i]) == false)//is it does, alert will pop up
+		{
+			window.alert("Reenter the first name");
+			return;
+		}
+		
+	}
+	for (i=0; i< second.length; i++)//same but for second name, the previous was for first name
+	{
+		if (isNaN(second[i]) == false)
+		{
+			window.alert("Reenter the second name");
+			return;
+		}
+		
+	}
+	
+	if ((first=="") || (second==""))//if user leaves one of the spaces blank, an alert will pop out
+	{
+		window.alert("Enter all areas");
+		return;
+	}
+	
+	if ((first.length<'3') || (second.length<'3'))//if the length of the string is under 3, an alert will pop out
+	{
+		window.alert("Your name should be bigger than 2 characters long");
+		return;
+	}
+	
+	if (first[0].toLowerCase() == first[0])//checks if the first letter is lowercase
+	{
+		window.alert("Your name should start with a capital letter");//alert pops out if the first letter is lowercase
+		return;
+	}
+	
+	if (second[0].toLowerCase() == second[0])
+	{
+		window.alert("Your name should start with a capital letter");
+		return;
+		
+	}
+	
+	$("#table1").append("<tr><td>"+$("#firstName").val()+"</td><td>"+$("#secondName").val()+"</td></tr>");
+	}); //this functions add a row with two cells to the variable table1 with the text in the cells that is inputted by the user in the other function
+	});
+
+	</script>
+</head>
+	<body>
+		<table id="table1">
+		<tr><th>First Name</th><th>Second Name</th></tr>
+		<tr><td>Fred</td><td>Morrison</td></tr>
+		<tr><td>Sarah</td><td>O'Connor</td></tr>
+		<tr><td>Sam</td><td>Spoon</td></tr>
+		</table>
+		<br>
+		<input id="firstName" size="15" value="" name="example1" placeholder="First Name">
+		<br><!-- variable firstName from where the user inputs his first name -->
+		<input id="secondName" size="15" value="" name="example2" placeholder="Second Name">
+		<br><!-- variable secondName from where the user inputs his second name -->
+		<button type="button" id="button">Click to input your name</button>
+		<!-- variable button where the user click the button that triggers the JQuery function -->
+	</body> 
+ </html>
+
+
+
+
+
+
+ 
